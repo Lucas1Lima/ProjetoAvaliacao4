@@ -1,0 +1,38 @@
+﻿@page
+@model WebApplication1.Pages.Entrada.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Tem certeza que deseja Apagar?</h1>
+<hr>
+    <dl class="row">
+        <dt class="col-md-4">
+            @Html.DisplayNameFor(model => model.Entradas.ValorEntrada)
+        </dt>
+        <dt class="col-md-4">
+            @Html.DisplayNameFor(model => model.Entradas.NomeEntrada)
+        </dt>
+        <dt class="col-md-4">
+            @Html.DisplayNameFor(model => model.Entradas.HoraEntrada)
+        </dt>
+    </dl>
+    <dl class="row">
+        <dd class="col-md-4">
+            @Html.DisplayFor(model => model.Entradas.ValorEntrada)
+        </dd>
+        <dd class="col-md-4">
+            @Html.DisplayFor(model => model.Entradas.NomeEntrada)
+        </dd>
+        <dd class="col-md-4">
+            @Html.DisplayFor(model => model.Entradas.HoraEntrada)
+        </dd>
+    </dl>
+
+<form method="post">
+    <input type="hidden" asp-for="Entradas.ID" />
+    <input type="submit" value="Apagar" class="btn btn-danger" /> |
+    <a asp-page="./Index">Voltar ao Formulário</a>
+</form>
+

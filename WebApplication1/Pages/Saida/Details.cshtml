@@ -1,0 +1,36 @@
+﻿@page
+@model WebApplication1.Pages.Saida.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalhes</h1>
+<hr />
+<dl class="row">
+    <dt class="col-md-4">
+        @Html.DisplayNameFor(model => model.Saidas.ValorSaida)
+    </dt>
+    <dt class="col-md-4">
+        @Html.DisplayNameFor(model => model.Saidas.NomeSaida)
+    </dt>
+    <dt class="col-md-4">
+        @Html.DisplayNameFor(model => model.Saidas.HoraSaida)
+    </dt>
+</dl>
+<dl class="row">
+    <dd class="col-md-4">
+        @Html.DisplayFor(model => model.Saidas.ValorSaida)
+    </dd>
+    <dd class="col-md-4">
+        @Html.DisplayFor(model => model.Saidas.NomeSaida)
+    </dd>
+    <dd class="col-md-4">
+        @Html.DisplayFor(model => model.Saidas.HoraSaida)
+    </dd>
+</dl>
+
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Saidas.ID">Editar</a> |
+    <a asp-page="./Index">Voltar ao Formulário</a>
+</div>

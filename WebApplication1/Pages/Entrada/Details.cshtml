@@ -1,0 +1,37 @@
+﻿@page
+@model WebApplication1.Pages.Entrada.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalhes</h1>
+
+<hr>
+<dl class="row">
+    <dt class="col-md-4">
+        @Html.DisplayNameFor(model => model.Entradas.ValorEntrada)
+    </dt>
+    <dt class="col-md-4">
+        @Html.DisplayNameFor(model => model.Entradas.NomeEntrada)
+    </dt>
+    <dt class="col-md-4">
+        @Html.DisplayNameFor(model => model.Entradas.HoraEntrada)
+    </dt>
+</dl>
+<dl class="row">
+    <dd class="col-md-4">
+        @Html.DisplayFor(model => model.Entradas.ValorEntrada)
+    </dd>
+    <dd class="col-md-4">
+        @Html.DisplayFor(model => model.Entradas.NomeEntrada)
+    </dd>
+    <dd class="col-md-4">
+        @Html.DisplayFor(model => model.Entradas.HoraEntrada)
+    </dd>
+</dl>
+
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Entradas.ID">Editar</a> |
+    <a asp-page="./Index">Voltar ao Formulário</a>
+</div>

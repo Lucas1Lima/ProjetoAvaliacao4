@@ -1,0 +1,43 @@
+﻿@model WebApplication1.Pages.Saida.Saidas
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Saidas</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ValorSaida" class="control-label"></label>
+                <input asp-for="ValorSaida" class="form-control" />
+                <span asp-validation-for="ValorSaida" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NomeSaida" class="control-label"></label>
+                <input asp-for="NomeSaida" class="form-control" />
+                <span asp-validation-for="NomeSaida" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HoraSaida" class="control-label"></label>
+                <input asp-for="HoraSaida" class="form-control" />
+                <span asp-validation-for="HoraSaida" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

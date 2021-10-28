@@ -1,0 +1,45 @@
+﻿@page
+@model WebApplication1.Pages.Verificar.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Verificar</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Verificar.ID" />
+            <div class="form-group">
+                <label asp-for="Verificar.ValorTotal" class="control-label"></label>
+                <input asp-for="Verificar.ValorTotal" class="form-control" />
+                <span asp-validation-for="Verificar.ValorTotal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Verificar.ValorEntrada" class="control-label"></label>
+                <input asp-for="Verificar.ValorEntrada" class="form-control" />
+                <span asp-validation-for="Verificar.ValorEntrada" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Verificar.ValorSaida" class="control-label"></label>
+                <input asp-for="Verificar.ValorSaida" class="form-control" />
+                <span asp-validation-for="Verificar.ValorSaida" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

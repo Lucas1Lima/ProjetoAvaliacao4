@@ -1,0 +1,48 @@
+﻿@page
+@model WebApplication1.Pages.Saida.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Saida</h1>
+
+<p>
+    <a asp-page="Create">Adicionar Saida</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Saidas[0].ValorSaida)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Saidas[0].NomeSaida)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Saidas[0].HoraSaida)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Saidas) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorSaida)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeSaida)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoraSaida)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Editar</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Detalhes</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Apagar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
